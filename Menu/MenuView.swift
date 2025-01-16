@@ -15,13 +15,9 @@ struct MenuView: View {
     var body: some View {
        
         List(menuItems) { menuItem in
-            HStack {
-                Image(menuItem.imageName).resizable().aspectRatio(contentMode: .fit).frame(width: 50, height: 50).cornerRadius(10)
-                Text(menuItem.name).bold()
-                Spacer()
-                Text("$" + menuItem.price)
-            }.listRowSeparator(.hidden)
-                .listRowBackground(Color(.brown).opacity(0.1))
+            
+          MenuListRoll(menuItem: menuItem)
+            
         }.listStyle(.plain)
             .onAppear {
                 // call for the data
